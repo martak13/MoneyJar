@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <header>
+            <div class="logo">
+                <img src="images/Logo.svg" alt="#">
+            </div>
+            <nav>
+                <ul>
+                    <li onclick="window.location.hash='home'">Home</li>
+                    <li onclick="window.location.hash='calculator'">Calculator</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container cards">
+                <div id="addCard" class="card card-add">
+                    <div id="switch" class="card-empty">
+                        <p>Create bank</p>
+                        <img src="images/plus.svg" alt="#">
+                    </div>
+                    <div id="cardRedactor" class="card-active">
+                        <input id="bankname" type="text" name="bankname" class="input__string" autocomplete="off" placeholder="Name" required pattern="[a-zA-Zа-яА-ЯйЙїЇєЄіІгГґҐ\s]+">
+                        <input id="rate" type="text" name="rate" class="input__dec" autocomplete="off" placeholder="Interest rate (%)" required pattern="[\d]+">
+                        <input id="loan" type="text" name="loan" class="input__dec" autocomplete="off" placeholder="Maximum loan" required pattern="[\d]+">
+                        <input id="downPayment" type="text" class="input__dec" autocomplete="off" name="downPayment" placeholder="Minimum down payment (%)" required pattern="[\d]+">
+                        <input id="term" type="text" name="term" class="input__dec" autocomplete="off" placeholder="Loan term (years)" required pattern="[\d]+">
+                        <button id="create">Create</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container calculator">
+                <div class="calculator__body">
+                    <span class="calculator__title">Mortrage calculator</span>
+                    <div class="calculator__inputs">
+                        <input id="inLoan" name="loan" placeholder="Loan" type="text" class="input__dec" autocomplete="off">
+                        <input id="inDownPayment" name="downPayment" placeholder="Down payment" type="text" class="input__dec" autocomplete="off">
+                        <select name="bank" id="allBanks">
+                            <option class="option__default" value="null" selected>Select bank:</option>
+                        </select>
+                    </div>
+                    <button id="calculate">Calculate</button>
+                    <span class="calculator__result" id="result"></span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+<script src="js/main.js"></script>
+
+</html>
